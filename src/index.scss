@@ -1,0 +1,47 @@
+/* Google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Odibee+Sans&display=swap');
+
+/* General Styles */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline-style: none;
+    text-decoration: none;
+}
+::after,::before{
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Raleway', sans-serif !important;
+    font-size: 14px;
+    font-weight: 500;
+}
+:root{
+    --bg-header: #18617d;
+    --bg-main: #ebebeb;
+    --bg-sidebar: #0c192b;
+    --bg-accent: #484a4d;
+    --bg-icon: #084a64;
+    --icon-color: #ffffff;
+    --text-color: #dadce1;
+    --nav-size: 60px;
+    --border: 2vh solid #2d2d2d;
+    --bg-border: #2d2d2d;
+    --border-radius: 8px;
+    --speed: 0.5s;
+}
+a,
+a:hover,
+a:active,
+a:visited{
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+/* RESPONSIVE */
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    
+}
