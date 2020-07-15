@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 // Conectext for DropDown menu
-import { navbarContext } from '../../../contexts/Navbar/NavbarContext';
+import { navbarContext } from '../../contexts/Navbar/NavbarContext';
 
 const DropdownItem = ({children, leftIcon, goToMenu }) => {
 

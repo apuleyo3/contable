@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Default header styled-component
-import SidebarContainer from '../../../layout/Default/Sidebar.style';
+import SidebarContainer from '../../layout/Globals/Sidebar.style';
 
 const Sidebar = (props) => {
 	return (

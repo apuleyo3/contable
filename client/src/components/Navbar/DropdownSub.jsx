@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { CSSTransition } from 'react-transition-group';
 // Conectext for DropDown menu
-import { navbarContext } from '../../../contexts/Navbar/NavbarContext';
+import { navbarContext } from '../../contexts/Navbar/NavbarContext';
 
 const DropdownSub = ({children, menu, type}) => {
 

@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 // Conectext for DropDown menu
-import { navbarContext } from '../../../contexts/Navbar/NavbarContext';
+import { navbarContext } from '../../contexts/Navbar/NavbarContext';
 // Import DropdownSub from sub-menus of dropdown
 import DropdownSub from "./DropdownSub";
 // Import DropdownItem for sub-items of dropdown

@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Default header styled-component
-import MainContainer from '../../../layout/Default/Main.style';
+import MainContainer from '../../layout/Globals/Main.style';
 
 const Main = (props) => {
 	return (

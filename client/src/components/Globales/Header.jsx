@@ -1,8 +1,8 @@
 import React from 'react';
 
 // Default header styled-component
-import HeaderContainer from '../../../layout/Default/Header.style';
-import logo from '../../../assets/logo_h.png';
+import HeaderContainer from '../../layout/Globals/Header.style';
+import logo from '../../assets/logo_h.png';
 import { Image } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
