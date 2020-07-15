@@ -7,8 +7,8 @@ import Navbar from "./Navbar";
 import NavbarContext from '../contexts/Navbar/NavbarContext';
 // Default container styled-component
 import DefaultContainer from "../layout/Globals/Container.style";
-// Borrar formulario
-import Formulario from '../components/DashboardComponents/Formulario';
+// Se importa Main, aquí debe ir una fnción que muestre el main según onClink del sidebar
+import MainContainer from "./MainContainer"
 
 const Dashboard = () => {
 	return (
@@ -22,7 +22,9 @@ const Dashboard = () => {
 						</NavbarContext>
 					</Default.Sidebar>
 					<Default.Main>
-						<h3>Main</h3>
+
+						<MainContainer>Main</MainContainer>
+						
 					</Default.Main>
 				</div>
 			</div>
