@@ -7,6 +7,8 @@ import Navbar from "./Navbar";
 import NavbarContext from '../contexts/Navbar/NavbarContext';
 // Default container styled-component
 import DefaultContainer from "../layout/Globals/Container.style";
+// Borrar formulario
+import Formulario from '../components/DashboardComponents/Formulario';
 
 const Dashboard = () => {
 	return (

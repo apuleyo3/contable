@@ -5,6 +5,8 @@ export const MainContainer = styled.div`
     height: 87vh;
     padding: 10px;
     border-radius: 10px;
+    overflow:scroll;
+    overflow-x: hidden;
 `;
 
 export default MainContainer;

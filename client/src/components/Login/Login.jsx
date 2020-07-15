@@ -3,6 +3,7 @@ import React from "react";
 import { Link } from 'react-router-dom';
 import { Form, Button } from "react-bootstrap";
 import { LoginForm, LoginHeader, LoginContainer } from "../../layout/Login/Login.style";
+import icono from '../../assets/001-cart.svg';
 
 const Login = () => {
 	return (
@@ -15,7 +16,7 @@ const Login = () => {
                         <LoginHeader>
                             {/* <Image src={logo} alt="logo" fluid /> */}
                             <Link to="/">
-                                <h1>SGA</h1>
+                                <h1><img className="i-head" src={icono} alt={icono} />CONTABLE</h1>
                             </Link>
                         </LoginHeader>
                     </div>
@@ -49,14 +50,9 @@ const Login = () => {
                                     />
                                 </Form.Group>
                                 <div className="btn-box">
-                                <Link to="/dashboard">
+                                    <Link to="/dashboard">
                                         <Button variant="primary" type="button">
                                             Ingresar
-                                        </Button>
-                                    </Link>
-                                    <Link to="/registrar">
-                                        <Button variant="primary" type="button">
-                                            Registrarse
                                         </Button>
                                     </Link>
                                 </div>
