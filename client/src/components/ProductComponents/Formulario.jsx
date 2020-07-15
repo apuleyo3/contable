@@ -55,11 +55,11 @@ const Formulario = (props) => {
                 <div className="card-body">
                     <div className="form-group">
                         <label htmlFfor="name">Nombre del producto</label>
-                        <input type="text" className="form-control" id="name" placeholder="Cama" onChange={nameHandler} />
+                        <input type="text" className="form-control" id="name" placeholder="Armario" onChange={nameHandler} />
                     </div>
                     <div className="form-group">
                         <label htmlFor="tags">Tags</label>
-                        <input type="text" className="form-control" id="tags" placeholder="Dormitorio, cama, dormir,... " onChange={tagsHandler}/>
+                        <input type="text" className="form-control" id="tags" placeholder="Dormitorio, ropa, casa,... " onChange={tagsHandler}/>
                     </div>
                     <div className="form-group">
                         <label htmlFor="brand">Marca</label>
