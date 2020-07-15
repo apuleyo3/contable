@@ -3,14 +3,23 @@ import React from 'react'
 const ProductCard = (props) => {
     const { name, tags, brand, category, price, description } = props;
     return (
-        <div>
-            <h1
-            id={name}>nombre</h1>
-            <h1 id={tags}>tags</h1>
-            <h1 id={brand}>marca</h1>
-            <h1 id={category}>categoria</h1>
-            <h1 id={price}>precio</h1>
-            <h1 id={description}>descripcion</h1>
+        <div className="card">{/* style="width: 18rem;" */}
+             <img className="card-img-top" src=".../100px180/?text=Image cap" alt="imagen" />
+            <div className="card-body">
+                <h5 className="card-title" id ={name}>Card name</h5>
+                <p className="card-text" id={description}>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+            <ul className="list-group list-group-flush">
+                <li className="list-group-item" id={brand}>Marca</li>
+                <li className="list-group-item" id={tags}>Tags</li>
+                <li className="list-group-item"id={category}>Categoría</li>
+                <li className="list-group-item"id={price}>Precio</li>
+            </ul>
+            <div className="card-body">
+        
+            </div>
+            
+         
         </div>
     )
 }

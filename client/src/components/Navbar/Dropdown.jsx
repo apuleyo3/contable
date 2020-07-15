@@ -21,13 +21,13 @@ const Dropdown = () => {
                 <DropdownItem leftIcon={"fas fa-tachometer-alt"}>
                     Dashboard
                 </DropdownItem>
-                <DropdownItem leftIcon={'fas fa-user'} goToMenu="humanos">
-                    Humanos
+                <DropdownItem leftIcon={'fas fa-plus'} goToMenu="humanos">
+                    Nuevo Producto
                 </DropdownItem>
-                <DropdownItem leftIcon={"fa fa-user"} goToMenu="palic">
-                    Palic
+                <DropdownItem leftIcon={"fa fa-cubes"} goToMenu="palic">
+                    Productos
                 </DropdownItem>
-                <DropdownItem leftIcon={"fa fa-user"} goToMenu="reservas">
+                <DropdownItem leftIcon={"fas fa-user"} goToMenu="reservas">
                     Reservas
                 </DropdownItem>
                 <DropdownItem leftIcon={"fa fa-user"} goToMenu="universal">
@@ -42,8 +42,8 @@ const Dropdown = () => {
                 <DropdownItem leftIcon={"fa fa-user"} goToMenu="general">
                     General de Seguros
                 </DropdownItem>
-                <DropdownItem leftIcon={"fa fa-user"} goToMenu="mapreh">
-                    MAPREH
+                <DropdownItem leftIcon={"fas fa-toggle-off"} goToMenu="mapreh">
+                    Cerrar Sesión
                 </DropdownItem>
             </DropdownSub>
 
