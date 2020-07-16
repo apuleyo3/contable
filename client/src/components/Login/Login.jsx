@@ -37,8 +37,12 @@ const Login = () => {
     if(email.trim() === '' && password.trim() === '') return;
     const getUsers = async()=>{
       try {
-        const result = await axios.get(URL, {headers:{"Access-Control-Allow-Origin": "*"}})
-        console.log(result);
+        const result = await axios.get(URL)
+        result.data.forEach(element => {
+          if(element[0] === email && element[1] === password){
+            console.log('Hi');
+          }
+        });
       } catch (error) {
         
       }
@@ -76,7 +80,6 @@ const Login = () => {
                     value={email}
                     name="email"
                     onChange={userHandler}
-                    id="user"
                   />
                   <Form.Text className="text-muted">
                     Evita compartir tus credenciales con otros.
@@ -90,7 +93,6 @@ const Login = () => {
                     value={password}
                     name="password"
                     onChange={userHandler}
-                    id="password"
                   />
                 </Form.Group>
                 <Form.Group controlId="formBasicCheckbox">
