@@ -1,6 +1,8 @@
 import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 // Conectext for DropDown menu
-import { navbarContext } from '../../contexts/Navbar/NavbarContext';
+import { navbarContext } from '../../contexts/NavbarContext';
+import { mainContext } from '../../contexts/MainContext';
 // Import DropdownSub from sub-menus of dropdown
 import DropdownSub from "./DropdownSub";
 // Import DropdownItem for sub-items of dropdown
@@ -11,6 +13,33 @@ const Dropdown = () => {
     const NavbarContext = useContext(navbarContext);
     const {menuHeight,dropdownRef} = NavbarContext;
 
+    const MainContext = useContext(mainContext);
+    const { mainMenu, setMainMenu } = MainContext;
+
+    const setMainDashboard = (e) => {
+        e.preventDefault();
+        setMainMenu({ 
+            dashboard: true,
+            nuevoProducto: false,
+            productos: false
+        });
+    }
+    const setMainNuevoProductos = (e) => {
+        e.preventDefault();
+        setMainMenu({ 
+            dashboard: false,
+            nuevoProducto: true,
+            productos: false
+        });
+    }
+    const setMainProductos = (e) => {
+        e.preventDefault();
+        setMainMenu({ 
+            dashboard: false,
+            nuevoProducto: false,
+            productos: true
+        });
+    }
     return (
         <div
             className="dropdown"
@@ -18,98 +47,38 @@ const Dropdown = () => {
             ref={dropdownRef}
         >
             <DropdownSub menu={'main'} type={'primary'} >
-                <DropdownItem leftIcon={"fas fa-tachometer-alt"}>
-                    Dashboard
-                </DropdownItem>
-                <DropdownItem leftIcon={'fas fa-plus'} goToMenu="humanos">
+
+                <span onClick={setMainDashboard}>
+                <DropdownItem
+                    leftIcon={"fas fa-tachometer-alt"}>
+                Dashboard
+                </DropdownItem></span>
+
+                <span onClick={setMainNuevoProductos}>
+                <DropdownItem leftIcon={'fas fa-plus'} goToMenu="main">
                     Nuevo Producto
-                </DropdownItem>
-                <DropdownItem leftIcon={"fa fa-cubes"} goToMenu="palic">
+                </DropdownItem></span>
+
+                <span onClick={setMainProductos}>
+                <DropdownItem leftIcon={"fa fa-cubes"} goToMenu="productos">
                     Productos
-                </DropdownItem>
-                <DropdownItem leftIcon={"fas fa-user"} goToMenu="reservas">
-                    Reservas
-                </DropdownItem>
-                <DropdownItem leftIcon={"fa fa-user"} goToMenu="universal">
-                    Universal
-                </DropdownItem>
-                <DropdownItem leftIcon={"fa fa-user"} goToMenu="pepin">
-                    Pepin
-                </DropdownItem>
-                <DropdownItem leftIcon={"fa fa-user"} goToMenu="colonial">
-                    La Colonial
-                </DropdownItem>
-                <DropdownItem leftIcon={"fa fa-user"} goToMenu="general">
-                    General de Seguros
-                </DropdownItem>
-                <DropdownItem leftIcon={"fas fa-toggle-off"} goToMenu="mapreh">
-                    Cerrar Sesión
+                </DropdownItem></span>
+
+                <DropdownItem leftIcon={"fas fa-toggle-off"} goToMenu="main">
+                <Link to='/'>Cerrar Sesión</Link>
                 </DropdownItem>
             </DropdownSub>
 
-            <DropdownSub menu={'humanos'} type={'secondary'} >
+            <DropdownSub menu={'productos'} type={'secondary'} >
                 <DropdownItem goToMenu="main" leftIcon={"fas fa-arrow-left"}>
                     Regresar
                 </DropdownItem>
-                {/* <DropdownItem leftIcon={"fas fa-book-open"}>Manuales</DropdownItem>
-                <DropdownItem leftIcon={"fas fa-industry"}>Subestaciones</DropdownItem> */}
+                <DropdownItem leftIcon={"fas fa-book-open"}>Categorías</DropdownItem>
+                <DropdownItem leftIcon={"fas fa-industry"}>Marcas</DropdownItem>
             </DropdownSub>
 
-            <DropdownSub menu={'palic'} type={'secondary'} >
-                <DropdownItem goToMenu="main" leftIcon={"fas fa-arrow-left"}>
-                    Regresar
-                </DropdownItem>
-                {/* <DropdownItem leftIcon={"fas fa-book-open"}>Manuales</DropdownItem>
-                <DropdownItem leftIcon={"fas fa-industry"}>Subestaciones</DropdownItem> */}
-            </DropdownSub>
 
-            <DropdownSub menu={'reservas'} type={'secondary'} >
-                <DropdownItem goToMenu="main" leftIcon={"fas fa-arrow-left"}>
-                    Regresar
-                </DropdownItem>
-                {/* <DropdownItem leftIcon={"fas fa-book-open"}>Manuales</DropdownItem>
-                <DropdownItem leftIcon={"fas fa-industry"}>Subestaciones</DropdownItem> */}
-            </DropdownSub>
-
-            <DropdownSub menu={'universal'} type={'secondary'} >
-                <DropdownItem goToMenu="main" leftIcon={"fas fa-arrow-left"}>
-                    Regresar
-                </DropdownItem>
-                {/* <DropdownItem leftIcon={"fas fa-book-open"}>Manuales</DropdownItem>
-                <DropdownItem leftIcon={"fas fa-industry"}>Subestaciones</DropdownItem> */}
-            </DropdownSub>
-
-            <DropdownSub menu={'pepin'} type={'secondary'} >
-                <DropdownItem goToMenu="main" leftIcon={"fas fa-arrow-left"}>
-                    Regresar
-                </DropdownItem>
-                {/* <DropdownItem leftIcon={"fas fa-book-open"}>Manuales</DropdownItem>
-                <DropdownItem leftIcon={"fas fa-industry"}>Subestaciones</DropdownItem> */}
-            </DropdownSub>
-
-            <DropdownSub menu={'colonial'} type={'secondary'} >
-                <DropdownItem goToMenu="main" leftIcon={"fas fa-arrow-left"}>
-                    Regresar
-                </DropdownItem>
-                {/* <DropdownItem leftIcon={"fas fa-book-open"}>Manuales</DropdownItem>
-                <DropdownItem leftIcon={"fas fa-industry"}>Subestaciones</DropdownItem> */}
-            </DropdownSub>
-
-            <DropdownSub menu={'general'} type={'secondary'} >
-                <DropdownItem goToMenu="main" leftIcon={"fas fa-arrow-left"}>
-                    Regresar
-                </DropdownItem>
-                {/* <DropdownItem leftIcon={"fas fa-book-open"}>Manuales</DropdownItem>
-                <DropdownItem leftIcon={"fas fa-industry"}>Subestaciones</DropdownItem> */}
-            </DropdownSub>
-
-            <DropdownSub menu={'mapreh'} type={'secondary'} >
-                <DropdownItem goToMenu="main" leftIcon={"fas fa-arrow-left"}>
-                    Regresar
-                </DropdownItem>
-                {/* <DropdownItem leftIcon={"fas fa-book-open"}>Manuales</DropdownItem>
-                <DropdownItem leftIcon={"fas fa-industry"}>Subestaciones</DropdownItem> */}
-            </DropdownSub>            
+        
         </div>
     );
 }

@@ -54,7 +54,7 @@ const Formulario = (props) => {
             <div className="card">
                 <div className="card-body">
                     <div className="form-group">
-                        <label htmlFfor="name">Nombre del producto</label>
+                        <label htmlFor="name">Nombre del producto</label>
                         <input type="text" className="form-control" id="name" placeholder="Armario" onChange={nameHandler} />
                     </div>
                     <div className="form-group">
@@ -63,8 +63,8 @@ const Formulario = (props) => {
                     </div>
                     <div className="form-group">
                         <label htmlFor="brand">Marca</label>
-                        <select class="custom-select" id="brand" onChange={brandHandler}>
-                            <option selected>Salecciona una marca</option>
+                        <select className="custom-select" id="brand" onChange={brandHandler}>
+                            <option defaultValue>Salecciona una marca</option>
                             <option value="1">Tamayo</option>
                             <option value="2">&Tradition</option>
                             <option value="3">ALKI</option>
@@ -72,8 +72,8 @@ const Formulario = (props) => {
                     </div>
                     <div className="form-group">
                         <label htmlFor="category">Categoría</label>
-                        <select class="custom-select" id="category" onChange={categoryHandler}>
-                            <option selected>Salecciona una categoría</option>
+                        <select className="custom-select" id="category" onChange={categoryHandler}>
+                            <option defaultValue>Salecciona una categoría</option>
                             <option value="1">Categoría 1</option>
                             <option value="2">Categoría 2</option>
                             <option value="3">Categoría 2</option>
@@ -83,9 +83,9 @@ const Formulario = (props) => {
                         <label htmlFor="price">Precio</label>
                         <input type="number" className="form-control" id="price" placeholder="$6,000.00" onChange={priceHandler}/>
                     </div>
-                    <div class="form-group">
-                        <label for="exampleFormControlTextarea1">Descripción</label>
-                        <textarea class="form-control" id="description" rows="3" onChange={descriptionHandler}></textarea>
+                    <div className="form-group">
+                        <label htmlFor="exampleFormControlTextarea1">Descripción</label>
+                        <textarea className="form-control" id="description" rows="3" onChange={descriptionHandler}></textarea>
                     </div>
                     <button className="btn btn-secondary">Cargar imagen</button>
                     <br/>
