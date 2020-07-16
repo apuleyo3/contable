@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import NavbarContext from '../../contexts/NavbarContext';
 
 const Formulario = (props) => {
 
@@ -7,7 +8,6 @@ const Formulario = (props) => {
 
     // Definiendo useStates
     const [ name, setName ] = useState("");
-    const [ tags, setTags ] = useState({});
     const [ brand, setBrand ] = useState("");
     const [ category, setCategory ] = useState("");
     const [ price, setPrice ] = useState("");
@@ -16,10 +16,6 @@ const Formulario = (props) => {
     // Handlers
     const nameHandler = (e) => {
         setName(e.target.value);
-      };
-
-    const tagsHandler = (e) => {
-        setTags(e.target.value);
       };
     
     const brandHandler = (e) => {
@@ -42,24 +38,21 @@ const Formulario = (props) => {
 
     const submitForm = () => {
         // Validando datos en formulario
-        if (name !== "" && tags !== "" && brand !== "" && category !== "" && price !== ""&& description !== "") {
-          createProduct(name, tags, brand, category, price, description)
+        if (name !== "" && category !== "" && brand !== "" && price !== ""&& description !== "") {
+          createProduct(name, category, brand, price, description)
         } else {
           alert("Todos los campos deben llenarse");
         }
       };
 
     return (
+      <NavbarContext>
         <div className="container p-2 col-sm-6">
             <div className="card">
                 <div className="card-body">
                     <div className="form-group">
                         <label htmlFor="name">Nombre del producto</label>
                         <input type="text" className="form-control" id="name" placeholder="Armario" onChange={nameHandler} />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="tags">Tags</label>
-                        <input type="text" className="form-control" id="tags" placeholder="Dormitorio, ropa, casa,... " onChange={tagsHandler}/>
                     </div>
                     <div className="form-group">
                         <label htmlFor="brand">Marca</label>
@@ -96,6 +89,7 @@ const Formulario = (props) => {
                 </div>
             </div>
         </div>
+      </NavbarContext>
     )
 }
 
