@@ -9,6 +9,7 @@ import {
 } from "../../layout/Login/Login.style";
 import icono from "../../assets/001-cart.svg";
 import axios from 'axios';
+import { useHistory } from 'react-router-dom';
 
 const Login = () => {
     
@@ -17,16 +18,19 @@ const Login = () => {
     email:'',
     password: ''
   });
+  const [error, setError] = useState(true);
   
   const { email, password } = user;
 
   const URL = `http://45.55.54.86:5000/api/v1/wildcard?key=CoNtable2020&op=SELECT&table=users&elem=email,pass`
+  const history = useHistory();
 
   // Función onChange(handler) en campos dle formulario
   const userHandler = (e) => {
     setUser({
       ...user,
-      [e.target.name] : e.target.value    });
+      [e.target.name] : e.target.value    
+    });
   };
 
 //   Función para hacer el checkin --->Ver Button al final del form
@@ -37,11 +41,19 @@ const Login = () => {
     if(email.trim() === '' && password.trim() === '') return;
     const getUsers = async()=>{
       try {
-        const result = await axios.get(URL, {headers:{"Access-Control-Allow-Origin": "*"}})
-        console.log(result);
-      } catch (error) {
+        const result = await axios.get(URL)
+        result.data.forEach(element => {
+          if(element[0] === email && element[1] === password){
+            history.push('/dashboard')
+            setError(false)
+          } 
+        });
+        if(error){
+          alert('Tu usuario o tu contraseña son incorrectos');
+          setError(true);
+        }
         
-      }
+      } catch (error) { }
     }
     getUsers();
   }; 
@@ -76,7 +88,6 @@ const Login = () => {
                     value={email}
                     name="email"
                     onChange={userHandler}
-                    id="user"
                   />
                   <Form.Text className="text-muted">
                     Evita compartir tus credenciales con otros.
@@ -90,14 +101,9 @@ const Login = () => {
                     value={password}
                     name="password"
                     onChange={userHandler}
-                    id="password"
                   />
                 </Form.Group>
-                <Form.Group controlId="formBasicCheckbox">
-                  <Form.Check type="checkbox" label="No soy un robot" />
-                </Form.Group>
                 <div className="btn-box">
-
                     <Button variant="primary" type="button" onClick={checkIn}>
                       Ingresar
                     </Button>
