@@ -8,10 +8,10 @@ export const LoginContainer = styled.div`
         background-size: cover;
         position: relative;
         z-index: 0;
-        color: #7ddaff;
+        color: #035AA6;
     }
     .overlay{
-        background-color: #000;
+        background-color:#035AA6;
         opacity: 0.4;
         position: absolute;
         top: 0;
@@ -38,8 +38,9 @@ export const LoginHeader = styled.div`
         font-size: 40px;
         font-weight: 500;
         font-family: 'Odibee Sans', cursive; 
-        border-top: 2px solid #fff;
-        border-bottom: 2px solid #fff;
+        /*border-top: 2px solid #fff;
+        border-bottom: 2px solid #fff;*/
+        color: #3f7fd2;
     }
     a{
         color: #7ddaff;
@@ -47,6 +48,20 @@ export const LoginHeader = styled.div`
     }
     a:link, a:visited{
         color: #7ddaff;
+    }
+    img.i-head{
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        width: 30px;
+        height: auto;
+        justify-content: center;
+        align-items: center;
+        float: left;
+        margin-top: 5px;
+        margin-right: 5px;
+        
     }
 `;
 
@@ -56,13 +71,13 @@ export const LoginForm = styled.div`
     position: relative;
     border: 5px solid rgba(255,255,255,0.2);
     border-radius: 10px;
-    background-color: rgba(0,0,0,0.6);
+    background-color: white;
     z-index: 0;
     .login-title{
         font-size: 1.5rem;
         font-weight: 700;
-        letter-spacing: 2px;
         margin-bottom: 30px;
+        color:#034AA6; 
     }
     form .form-group{
         margin-bottom: 25px;
@@ -73,7 +88,7 @@ export const LoginForm = styled.div`
     }
     form .btn-box{
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
     }
     form .btn-single{

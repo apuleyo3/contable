@@ -37,7 +37,8 @@ const NavbarDashboard = styled.div`
         align-items: center;
         border-radius: 20px;
         transition: background var(--speed);
-        margin-bottom: 10px
+        margin-bottom: 10px;
+        cursor: pointer;
     }
     .menu-item .icon-button:hover {
         filter: none;

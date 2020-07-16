@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 // Conectext for DropDown menu
-import { navbarContext } from '../../../contexts/Navbar/NavbarContext';
+import { navbarContext } from '../../contexts/NavbarContext';
 
 const DropdownItem = ({children, leftIcon, goToMenu }) => {
 
@@ -13,14 +13,14 @@ const DropdownItem = ({children, leftIcon, goToMenu }) => {
     }
 
     return (
-        <a
+        <span
             href="!#"
             className="menu-item"
             onClick={handleClick}
         >
             <span className="icon-button"><i className={leftIcon}></i></span>
             {children}
-        </a>
+        </span>
     );
 }
 

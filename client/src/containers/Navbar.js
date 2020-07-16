@@ -1,10 +1,10 @@
 import React, { useEffect, useContext } from "react";
 // Import Dropdown for menus of dropdown
-import Dropdown from "./Dropdown";
+import Dropdown from "../components/Navbar/Dropdown";
 // Conectext for DropDown menu
-import { navbarContext } from '../../../contexts/Navbar/NavbarContext';
+import { navbarContext } from '../contexts/NavbarContext';
 // Import styled component for navbar
-import NavbarDashboard from "../../../layout/Dashboard/Navbar.style";
+import NavbarDashboard from "../layout/Dashboard/Navbar.style";
 
 const Navbar = () => {
 
