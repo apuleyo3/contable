@@ -22,6 +22,7 @@ const NavbarDashboard = styled.div`
         width: 100%;
         border-radius: var(--border-radius);
         overflow: hidden;
+        margin-top: 2rem;
     }
     .dropdown {
         border-radius: var(--border-radius);
@@ -44,18 +45,19 @@ const NavbarDashboard = styled.div`
         filter: none;
     }
     .menu-item:hover {
-        background-color: #525357;
+        background-color: #D9AC59;
     }
     .icon-button{
         width: 35px;
         height: 35px;
-        background-color: var(--bg-icon);
+        background-color: #D96459;
         border-radius: 50%;
         display: inline-flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         margin-right: 10px;
+        margin-top: 8px;
     }
     /* CSSTransition classes  */
     .menu-primary-enter {
@@ -91,6 +93,7 @@ const NavbarDashboard = styled.div`
     .fas,
     .far{
         color: var(--icon-color);
+        font-size: 1.3rem;
     }
 `;
 

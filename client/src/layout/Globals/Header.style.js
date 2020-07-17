@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const HeaderContainer = styled.div`
     
     box-sizing: content-box;
-    background-color: var(--bg-header);
+    background-color: #034AA6;
     width: 100%;
     margin: 0 2vh 2vh 2vh;
     border-bottom-left-radius: var(--border-radius);
