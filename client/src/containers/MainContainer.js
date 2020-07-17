@@ -1,9 +1,9 @@
 import React, { useContext } from 'react'
 // import Formulario from '../components/ProductComponents/Formulario';
 import CrearProductoContainer from './CrearProductoContainer'
-import ProductCard from '../components/ProductComponents/ProductCard';
 import SearchInput from '../components/ProductComponents/SearchInput';
 import { mainContext } from '../contexts/MainContext';
+import Productos from './Productos'
 
 const Main = () => {
 
@@ -14,7 +14,7 @@ const Main = () => {
         <div>
             { mainMenu.dashboard ? <SearchInput /> : null}
             { mainMenu.nuevoProducto ? <CrearProductoContainer /> : null}
-            { mainMenu.productos ? <ProductCard /> : null}
+            { mainMenu.productos ? <Productos /> : null}
         </div>
     )
 }

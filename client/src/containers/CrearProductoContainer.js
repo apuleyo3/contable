@@ -1,21 +1,17 @@
 import React, { Fragment } from 'react';
 import Formulario from '../components/ProductComponents/Formulario'
 import axios from 'axios';
-import { ProductClass } from '../utils/ProductClass';
 import { useHistory } from 'react-router-dom';
 
 
-const CrearProductoContainer = (props) => {
-
-    const{ name, category, brand, price, description, user }= props;
-
-    const URL = `http://45.55.54.86:5000/api/v1/productos?key=CoNtable2020&name=${name}&category_id=${category}&user_id=${user}&price=${price}&description=${description}&brand_id=${brand}`
+const CrearProductoContainer = () => {
+    
     const history = useHistory();
 
-    const createProduct = (name, category, brand, price, description, user, id) => {
-        const newProduct = new ProductClass(name, category, brand, price, description, user, id);
-        axios.post(URL, newProduct.id)
-        .then(()=>history.push('/Productos'))
+    const createProduct = async(name, category, brand, price, description, user) => {
+        const URL = `http://45.55.54.86:5000/api/v1/productos?key=CoNtable2020&name=${name}&category_id=${category}&user_id=${user}&price=${price}&description=${description}&brand_id=${brand}`
+        await axios.post(URL)
+        .then(()=>history.push('/dashboard'))
         .catch((error)=>alert(error))
     }
     return (

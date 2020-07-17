@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Login from './components/Login/Login';
 import Dashboard from './containers/Dashboard';
 import Formulario from './components/ProductComponents/Formulario';
+import Productos from './containers/Productos';
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
           <Route exact path='/' component={Login} /> 
           <Route exact path='/dashboard' component={Dashboard} />
           <Route exact path='/formulario' component={Formulario} />
+          <Route exact path='/productos' component={Productos} />
         </Switch>
       </Router>
     </Fragment>
