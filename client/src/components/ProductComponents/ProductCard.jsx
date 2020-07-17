@@ -26,6 +26,7 @@ const ProductCard = (props) => {
   };
 
   return (
+    <Fragment>
     <CardContainer>
       <div className="cardContainerC col col-sm-6 col-md-4 col-lg-4">
       <div className="card p-3">
@@ -55,6 +56,7 @@ const ProductCard = (props) => {
       </div>
       </div>  
     </CardContainer>
+    </Fragment>
   );
 };
 export default ProductCard;
